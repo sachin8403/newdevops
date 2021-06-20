@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: stop docker cotainer
+      shell: docker container stop ibm-project
+    - name: remove container
+      shell: docker container rm ibm-project
+    - name: remove docker image
+      shell: docker image rm sachin8403/IBM_Project
+    - name: create docker container
+      shell: docker run container -itd --name ibm-project sachin8403/IBM_Project
